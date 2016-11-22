@@ -1,0 +1,60 @@
+%% 结果分析一：理想可见度函数与不均匀场景划分实际可见度函数分布
+% figure(1)
+% plot(Fov0,abs(visibility_non),'b','LineWidth',2)
+% hold on
+% plot(Fov0,abs(V0),'r','LineWidth',2)
+% legend('实际可见度绝对值','理想可见度绝对值')
+% xlabel('无混叠视场范围')
+% ylabel('可见度绝对值')
+% title('实际可见度函数与理想可见度函数的分布')
+
+figure(1)
+subplot(2,1,1)
+plot(div,V1_non,'b',div,Vr,'r','LineWidth',2)
+legend('可见度实部变化','可见度实部理论值')
+xlabel('场景分隔点数')
+ylabel('可见度实部')
+title('可见度实部与场景分隔点数的关系')
+subplot(2,1,2)
+plot(div,V2,'b',div,Vi,'r','LineWidth',2)
+legend('可见度虚部变化','可见度虚部理论值')
+xlabel('场景分隔点数')
+ylabel('可见度虚部')
+title('可见度虚部与场景分隔点数的关系')
+
+%% 结果分析二：不均匀场景划分实际可见度与理想可见度函数实部、虚部之间的相对误差
+% figure(2)
+% subplot(2,1,1)
+% plot(Fov0,abs(real(V0)-real(visibility_non)),'LineWidth',2)
+% xlabel('无混叠视场范围')
+% ylabel('可见度实部相对误差')
+% title('实际可见度函数与理想可见度函数实部之间的相对误差')
+% subplot(2,1,2)
+% plot(Fov0,abs(imag(V0)-imag(visibility_non)),'LineWidth',2)
+% xlabel('无混叠视场范围')
+% ylabel('可见度虚部相对误差')
+% title('实际可见度函数与理想可见度函数虚部之间的相对误差')
+
+% figure(2)
+% subplot(2,1,1)
+% plot(Fov0,abs(real(V0)-real(visibility_non)),'LineWidth',2)
+% % plot((1:N)*div,abs(V1-Vr),'LineWidth',2)
+% xlabel('场景分隔点数')
+% ylabel('可见度实部相对误差')
+% title('实际可见度函数与理想可见度函数实部之间的相对误差')
+% subplot(2,1,2)
+% plot(Fov0,abs(imag(V0)-imag(visibility_non)),'LineWidth',2)
+% % plot((1:N)*div,abs(V2-Vi),'LineWidth',2)
+% xlabel('场景分隔点数')
+% ylabel('可见度虚部相对误差')
+% title('实际可见度函数与理想可见度函数虚部之间的相对误差')
+
+%% 结果分析三：不均匀场景划分实际可见度与理想可见度函数误差的绝对值
+figure(3)
+plot(abs(V0(31)-visibility_non),'LineWidth',2)
+xlabel('无混叠视场范围')
+ylabel('可见度误差的绝对值')
+title('实际可见度函数与理想可见度函数误差的绝对值')
+
+
+
